@@ -1,18 +1,31 @@
-# Zero
+# Zero - Envelope Budgeting Application
 
-To start your Phoenix server:
+A simple and intuitive envelope budgeting system built with Elixir and Phoenix Framework.
 
-  * Run `mix setup` to install and setup dependencies
-  * Start Phoenix endpoint with `mix phx.server` or inside IEx with `iex -S mix phx.server`
+### Prerequisites
+- Elixir 1.14+ and Erlang 25+
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+### Installation
 
-Ready to run in production? Please [check our deployment guides](https://hexdocs.pm/phoenix/deployment.html).
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/IlhanCihan/zeroPhoneix.git
+   cd zero
+   ```
 
-## Learn more
+2. Install dependencies:
+   ```bash
+   mix deps.get
+   ```
 
-  * Official website: https://www.phoenixframework.org/
-  * Guides: https://hexdocs.pm/phoenix/overview.html
-  * Docs: https://hexdocs.pm/phoenix
-  * Forum: https://elixirforum.com/c/phoenix-forum
-  * Source: https://github.com/phoenixframework/phoenix
+3. Setup the database:
+   ```bash
+   mix ecto.setup
+   ```
+
+4. Start the Phoenix server:
+   ```bash
+   mix phx.server
+   ```
+
+5. Visit [`localhost:4000`](http://localhost:4000) in your browser
