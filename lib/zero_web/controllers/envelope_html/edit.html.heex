@@ -1,0 +1,8 @@
+<.header>
+  Edit Envelope {@envelope.id}
+  <:subtitle>Use this form to manage envelope records in your database.</:subtitle>
+</.header>
+
+<.envelope_form changeset={@changeset} action={~p"/envelopes/#{@envelope}"} />
+
+<.back navigate={~p"/envelopes"}>Back to envelopes</.back>

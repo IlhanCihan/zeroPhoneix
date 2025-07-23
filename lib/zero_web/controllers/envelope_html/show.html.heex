@@ -1,0 +1,16 @@
+<.header>
+  Envelope {@envelope.id}
+  <:subtitle>This is a envelope record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/envelopes/#{@envelope}/edit"}>
+      <.button>Edit envelope</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Name">{@envelope.name}</:item>
+  <:item title="Balance">{@envelope.balance}</:item>
+</.list>
+
+<.back navigate={~p"/envelopes"}>Back to envelopes</.back>

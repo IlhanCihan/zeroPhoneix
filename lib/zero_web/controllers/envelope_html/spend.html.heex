@@ -1,0 +1,16 @@
+<.header>
+  Spend from <%= @envelope.name %> - Current Balance: $<%= @envelope.balance %>
+</.header>
+
+<.simple_form :let={f} for={@changeset} action={~p"/envelopes/#{@envelope}/spend"} method="patch">
+  <.error :if={@changeset.action}>
+    Oops, something went wrong! Please check the errors below.
+  </.error>
+  <.input field={f[:amount]} type="number" label="Amount to Spend" min="1" max={@envelope.balance} />
+  <:actions>
+    <.button>Spend</.button>
+    <.link navigate={~p"/envelopes"} class="button">
+      Cancel
+    </.link>
+  </:actions>
+</.simple_form> 

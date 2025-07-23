@@ -1,0 +1,25 @@
+<.header>
+  Listing Income
+  <:actions>
+    <%= if Enum.empty?(@income_collection) do %>
+      <.link href={~p"/income/new"}>
+        <.button>New Income</.button>
+      </.link>
+    <% end %>
+  </:actions>
+</.header>
+
+<.table id="income" rows={@income_collection} row_click={&JS.navigate(~p"/income/#{&1}")}>
+  <:col :let={income} label="Income">{income.income}</:col>
+  <:action :let={income}>
+    <div class="sr-only">
+      <.link navigate={~p"/income/#{income}"}>Show</.link>
+    </div>
+    <.link navigate={~p"/income/#{income}/edit"}>Edit</.link>
+  </:action>
+  <:action :let={income}>
+    <.link href={~p"/income/#{income}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>

@@ -1,0 +1,15 @@
+<.header>
+  Income {@income.id}
+  <:subtitle>This is a income record from your database.</:subtitle>
+  <:actions>
+    <.link href={~p"/income/#{@income}/edit"}>
+      <.button>Edit income</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.list>
+  <:item title="Income">{@income.income}</:item>
+</.list>
+
+<.back navigate={~p"/income"}>Back to income</.back>

@@ -1,0 +1,26 @@
+<.header>
+  Listing Envelopes - Income: <%= if @income, do: "$#{@income.income}", else: "No income set" %>
+  <:actions>
+    <.link href={~p"/envelopes/new"}>
+      <.button>New Envelope</.button>
+    </.link>
+  </:actions>
+</.header>
+
+<.table id="envelopes" rows={@envelopes} row_click={&JS.navigate(~p"/envelopes/#{&1}")}>
+  <:col :let={envelope} label="Name">{envelope.name}</:col>
+  <:col :let={envelope} label="Balance">{envelope.balance}</:col>
+  <:action :let={envelope}>
+    <div class="sr-only">
+      <.link navigate={~p"/envelopes/#{envelope}"}>Show</.link>
+    </div>
+  </:action>
+  <:action :let={envelope}>
+    <.link navigate={~p"/envelopes/#{envelope}/spend"}>Spend</.link>
+  </:action>
+  <:action :let={envelope}>
+    <.link href={~p"/envelopes/#{envelope}"} method="delete" data-confirm="Are you sure?">
+      Delete
+    </.link>
+  </:action>
+</.table>
